@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  OnboardingView.swift
 //  TechMarketplace
 //
 //  Created by Rajmani Kushwaha on 26/08/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct OnboardingView: View {
     let customBlue = Color(UIColor(hex: "#0001FC")!)
 
     var body: some View {
@@ -32,27 +32,24 @@ struct ContentView: View {
                     
                     Spacer()
 
-                    Button {
-                        print("pressed - Let's start")
-                    } label: {
+                    NavigationLink(destination: LoginView()) {
                         Text("Let's start")
                             .fontWeight(.bold)
                             .foregroundColor(.blue)
                             .frame(maxWidth: .infinity)
                             .frame(minHeight: 48)
                             .background(Color.white)
-
                     }
                     .cornerRadius(8)
                     .padding(20)
                     
                     Spacer()
 
-                    Button("Skip for now") {
-                        print("pressed - skip for now")
+                    NavigationLink(destination: HomeView()) {
+                        Text("Skip for now")
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
                     }
-                    .fontWeight(.medium)
-                    .foregroundColor(.white)
                     
                     Spacer()
                 }
@@ -62,9 +59,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        OnboardingView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

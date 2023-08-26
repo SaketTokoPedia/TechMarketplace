@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31F023802A9A0CCA0068636A /* TechMarketplaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */; };
-		31F023822A9A0CCA0068636A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023812A9A0CCA0068636A /* ContentView.swift */; };
+		31F023822A9A0CCA0068636A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023812A9A0CCA0068636A /* OnboardingView.swift */; };
 		31F023842A9A0CCB0068636A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F023832A9A0CCB0068636A /* Assets.xcassets */; };
 		31F023872A9A0CCB0068636A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F023862A9A0CCB0068636A /* Preview Assets.xcassets */; };
 		31F023892A9A0CCB0068636A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023882A9A0CCB0068636A /* Persistence.swift */; };
@@ -16,6 +16,8 @@
 		31F023962A9A0CCB0068636A /* TechMarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023952A9A0CCB0068636A /* TechMarketplaceTests.swift */; };
 		31F023A02A9A0CCB0068636A /* TechMarketplaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0239F2A9A0CCB0068636A /* TechMarketplaceUITests.swift */; };
 		31F023A22A9A0CCB0068636A /* TechMarketplaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023A12A9A0CCB0068636A /* TechMarketplaceUITestsLaunchTests.swift */; };
+		31F023B12A9A27200068636A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023B02A9A27200068636A /* LoginView.swift */; };
+		31F023B42A9A287E0068636A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023B32A9A287E0068636A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 /* Begin PBXFileReference section */
 		31F0237C2A9A0CCA0068636A /* TechMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMarketplaceApp.swift; sourceTree = "<group>"; };
-		31F023812A9A0CCA0068636A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		31F023812A9A0CCA0068636A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		31F023832A9A0CCB0068636A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31F023862A9A0CCB0068636A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31F023882A9A0CCB0068636A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		31F0239B2A9A0CCB0068636A /* TechMarketplaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechMarketplaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F0239F2A9A0CCB0068636A /* TechMarketplaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMarketplaceUITests.swift; sourceTree = "<group>"; };
 		31F023A12A9A0CCB0068636A /* TechMarketplaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMarketplaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		31F023B02A9A27200068636A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		31F023B32A9A287E0068636A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 		31F0237E2A9A0CCA0068636A /* TechMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				31F023B22A9A28750068636A /* Home */,
 				31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */,
-				31F023812A9A0CCA0068636A /* ContentView.swift */,
+				31F023AE2A9A26CD0068636A /* Login */,
+				31F023AF2A9A26ED0068636A /* Onboarding */,
 				31F023832A9A0CCB0068636A /* Assets.xcassets */,
 				31F023882A9A0CCB0068636A /* Persistence.swift */,
 				31F0238A2A9A0CCB0068636A /* TechMarketplace.xcdatamodeld */,
@@ -131,6 +137,30 @@
 				31F023A12A9A0CCB0068636A /* TechMarketplaceUITestsLaunchTests.swift */,
 			);
 			path = TechMarketplaceUITests;
+			sourceTree = "<group>";
+		};
+		31F023AE2A9A26CD0068636A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				31F023B02A9A27200068636A /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		31F023AF2A9A26ED0068636A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				31F023812A9A0CCA0068636A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		31F023B22A9A28750068636A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				31F023B32A9A287E0068636A /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +295,9 @@
 			files = (
 				31F023892A9A0CCB0068636A /* Persistence.swift in Sources */,
 				31F0238C2A9A0CCB0068636A /* TechMarketplace.xcdatamodeld in Sources */,
-				31F023822A9A0CCA0068636A /* ContentView.swift in Sources */,
+				31F023822A9A0CCA0068636A /* OnboardingView.swift in Sources */,
+				31F023B42A9A287E0068636A /* HomeView.swift in Sources */,
+				31F023B12A9A27200068636A /* LoginView.swift in Sources */,
 				31F023802A9A0CCA0068636A /* TechMarketplaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
