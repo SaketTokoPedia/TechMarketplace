@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Creating HomeView
 struct HomeView: View {
     
     @Binding var isPresented: Bool
