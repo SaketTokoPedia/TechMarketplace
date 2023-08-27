@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    let customBlue = Color(UIColor(hex: "#0001FC")!)
+
+    @State var redirectToLogin = false
+    @State var redirectToHome = false
 
     var body: some View {
         NavigationView {
             ZStack {
-                customBlue.edgesIgnoringSafeArea(.all)
+                Color.background.edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     Spacer()
@@ -32,7 +34,7 @@ struct OnboardingView: View {
                     
                     Spacer()
 
-                    NavigationLink(destination: LoginView()) {
+                    NavigationLink(destination: LoginOptionView()) {
                         Text("Let's start")
                             .fontWeight(.bold)
                             .foregroundColor(.blue)
@@ -45,16 +47,19 @@ struct OnboardingView: View {
                     
                     Spacer()
 
-                    NavigationLink(destination: HomeView()) {
-                        Text("Skip for now")
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
+                    Button("Skip for now") {
+                        redirectToHome = true
                     }
+                    .fontWeight(.medium)
+                    .foregroundColor(.white)
                     
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
             }
+        }
+        .fullScreenCover(isPresented: $redirectToHome) {
+            HomeView(isPresented: $redirectToHome)
         }
     }
 }
@@ -62,22 +67,5 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
-extension UIColor {
-    convenience init?(hex: String) {
-        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
-        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
-        
-        var rgb: UInt64 = 0
-        
-        Scanner(string: hexSanitized).scanHexInt64(&rgb)
-        
-        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
-        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
-        let blue = CGFloat(rgb & 0x0000FF) / 255.0
-        
-        self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }

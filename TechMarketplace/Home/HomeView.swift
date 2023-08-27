@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @Binding var isPresented: Bool
+    
     var body: some View {
-        Text("Home")
+        Button("logout") {
+            isPresented = false
+        }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    @State var isPresented: Bool = true
+//
+//    static var previews: some View {
+//        HomeView(isPresented: $isPresented)
+//    }
+//}
