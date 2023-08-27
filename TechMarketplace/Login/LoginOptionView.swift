@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginOptionView: View {
     
     @State var isSkipLogin = false
+    @State var redirectToSignup = false
     @State var login = false
 
     var body: some View {
@@ -25,66 +26,79 @@ struct LoginOptionView: View {
                 
                 Spacer(minLength: 8)
 
-                Button {
-                    print("pressed")
-                } label: {
-                    Text("Let's start")
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                        .frame(maxWidth: .infinity)
-                        .frame(minHeight: 48)
-                        .background(Color.white)
-                        .cornerRadius(8)
+                VStack(alignment: .leading, spacing: 20) {
+                    Button("Create an account") {
+                        redirectToSignup = true
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(minHeight: 48)
+                    .background(.white)
+                    .foregroundColor(.blue)
+                    .cornerRadius(8)
+
+                    HStack {
+                        Image("search")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(.leading, 20)
+                        Button("Connect with Google") {
+                            print("Google")
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    .padding()
+                    .frame(minHeight: 48)
+                    .background(.white)
+                    .foregroundColor(.black.opacity(0.8))
+                    .cornerRadius(8)
+
+                    HStack {
+                        Image("facebook")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(.leading, 20)
+                        Button("Connect with Facebook") {
+                            print("facebook")
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    .padding()
+                    .frame(minHeight: 48)
+                    .frame(alignment: .leading)
+                    .background(Color.facebook)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
                 }
-                
-                Button {
-                    print("pressed")
-                } label: {
-                    Text("Connect with Google")
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                        .frame(maxWidth: .infinity)
-                        .frame(minHeight: 48)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                }
-                
-                Button {
-                    print("pressed")
-                } label: {
-                    Text("Connect with facebook")
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                        .frame(maxWidth: .infinity)
-                        .frame(minHeight: 48)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                }
+                .bold()
 
                 Button("Already have an account ? Login") {
                     login = true
                 }
-                .padding(.top, 30)
+                .padding(.top)
+                .fontWeight(.regular)
                
                 Spacer()
-
                 
                 Button("Skip for now") {
                     isSkipLogin = true
                 }
-                .fontWeight(.medium)
-                .foregroundColor(.white)
                 
                 Spacer()
             }
             .padding()
+            .bold()
+            .foregroundColor(.white)
             .frame(maxWidth: .infinity)
+            
         }
         .fullScreenCover(isPresented: $isSkipLogin, content: {
             HomeView(isPresented: $isSkipLogin)
         })
         .fullScreenCover(isPresented: $login, content: {
             LoginView()
+        })
+        .fullScreenCover(isPresented: $redirectToSignup, content: {
+            SignupView()
         })
         .navigationBarHidden(true)
     }

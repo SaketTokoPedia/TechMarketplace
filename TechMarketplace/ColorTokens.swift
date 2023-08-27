@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static let background = Color(UIColor(hex: "#0001FC"))
+    static let background = Color(UIColor(hex: "#244FE9"))
+    static let facebook = Color(UIColor(hex: "#415A93"))
     static let placeholder = Color.white.opacity(0.8)
+    
 }
 
 extension UIColor {
