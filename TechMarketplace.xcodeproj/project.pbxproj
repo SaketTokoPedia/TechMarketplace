@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		316EA1C22A9B236000343D67 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EA1C12A9B236000343D67 /* LoginView.swift */; };
+		316EA1C52A9B2BD800343D67 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EA1C42A9B2BD800343D67 /* SignupView.swift */; };
+		316EA1C82A9B3C8900343D67 /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EA1C72A9B3C8900343D67 /* LabelTextField.swift */; };
+		316EA1CA2A9B3EE100343D67 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EA1C92A9B3EE100343D67 /* CustomTextFieldStyle.swift */; };
 		31F023802A9A0CCA0068636A /* TechMarketplaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */; };
 		31F023822A9A0CCA0068636A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F023812A9A0CCA0068636A /* OnboardingView.swift */; };
 		31F023842A9A0CCB0068636A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F023832A9A0CCB0068636A /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		316EA1C12A9B236000343D67 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		316EA1C42A9B2BD800343D67 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		316EA1C72A9B3C8900343D67 /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
+		316EA1C92A9B3EE100343D67 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		31F0237C2A9A0CCA0068636A /* TechMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMarketplaceApp.swift; sourceTree = "<group>"; };
 		31F023812A9A0CCA0068636A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		316EA1C32A9B2BC900343D67 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				316EA1C42A9B2BD800343D67 /* SignupView.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		316EA1C62A9B3C7600343D67 /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				316EA1C72A9B3C8900343D67 /* LabelTextField.swift */,
+				316EA1C92A9B3EE100343D67 /* CustomTextFieldStyle.swift */,
+			);
+			path = SharedUI;
+			sourceTree = "<group>";
+		};
 		31F023732A9A0CCA0068636A = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +129,8 @@
 		31F0237E2A9A0CCA0068636A /* TechMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				316EA1C62A9B3C7600343D67 /* SharedUI */,
+				316EA1C32A9B2BC900343D67 /* Signup */,
 				31F023B22A9A28750068636A /* Home */,
 				31F0237F2A9A0CCA0068636A /* TechMarketplaceApp.swift */,
 				31F023AE2A9A26CD0068636A /* Login */,
@@ -299,9 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316EA1C52A9B2BD800343D67 /* SignupView.swift in Sources */,
+				316EA1CA2A9B3EE100343D67 /* CustomTextFieldStyle.swift in Sources */,
 				31F023892A9A0CCB0068636A /* Persistence.swift in Sources */,
 				31F0238C2A9A0CCB0068636A /* TechMarketplace.xcdatamodeld in Sources */,
 				31F023822A9A0CCA0068636A /* OnboardingView.swift in Sources */,
+				316EA1C82A9B3C8900343D67 /* LabelTextField.swift in Sources */,
 				31F023B42A9A287E0068636A /* HomeView.swift in Sources */,
 				31F023B12A9A27200068636A /* LoginOptionView.swift in Sources */,
 				316EA1C22A9B236000343D67 /* LoginView.swift in Sources */,

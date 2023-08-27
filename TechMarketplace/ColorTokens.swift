@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Color {
     static let background = Color(UIColor(hex: "#0001FC"))
+    static let placeholder = Color.white.opacity(0.8)
 }
 
 extension UIColor {

@@ -18,10 +18,12 @@ struct HomeView: View {
     }
 }
 
-//struct HomeView_Previews: PreviewProvider {
-//    @State var isPresented: Bool = true
-//
-//    static var previews: some View {
-//        HomeView(isPresented: $isPresented)
-//    }
-//}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        let binding = Binding<Bool>(
+            get: { false },
+            set: { _ in }
+        )
+        HomeView(isPresented: binding)
+    }
+}

@@ -1,78 +1,91 @@
 //
-//  LoginView.swift
+//  SignupView.swift
 //  TechMarketplace
 //
-//  Created by Rajmani Kushwaha on 26/08/23.
+//  Created by Rajmani Kushwaha on 27/08/23.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct SignupView: View {
     
     @State var redirectToHome = false
-    @State var redirectToSignup = false
+    @State var redirectToLogin = false
+    @State var fullName = String()
     @State var email = String()
     @State var password = String()
-    
+
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
 
-                Text("Login")
+                Text("Create an account")
                     .font(.title)
                     .padding(.top)
-                
-                Spacer()
+
                 Spacer()
 
-                VStack(spacing: 20) {
-                    LabelTextField(inputText: $email, labelText: "Email")
-                    LabelTextField(inputText: $password, labelText: "Password", isSecureField: true)
-                }
+                SignupInputView(fullName: $fullName,
+                                email: $email,
+                                password: $password)
                 
                 Button("Validate") {
                     redirectToHome = true
                 }
+                .fontWeight(.bold)
                 .foregroundColor(.blue)
                 .frame(maxWidth: .infinity)
                 .frame(minHeight: 48)
-                .background(.white)
+                .background(Color.white)
                 .cornerRadius(8)
-
-                Button("Already have an account ? Sign-up") {
-                    redirectToSignup = true
+                
+                Button("Already have an account ? Login") {
+                    redirectToLogin = true
                 }
-                .fontWeight(.regular)
                 .foregroundColor(.placeholder)
                 .padding(.top)
-               
+                .fontWeight(.regular)
+                
                 Spacer()
 
                 Button("Skip for now") {
                     redirectToHome = true
                 }
                 .fontWeight(.medium)
-                .foregroundColor(.white)
-                .padding()
                 
                 Spacer()
             }
             .bold()
             .foregroundColor(.white)
             .padding()
+            .frame(maxWidth: .infinity)
         }
         .fullScreenCover(isPresented: $redirectToHome, content: {
             HomeView(isPresented: $redirectToHome)
         })
-        .fullScreenCover(isPresented: $redirectToSignup, content: {
-            SignupView()
+        .fullScreenCover(isPresented: $redirectToLogin, content: {
+            LoginView()
         })
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct SignupInputView: View {
+    @Binding var fullName: String
+    @Binding var email: String
+    @Binding var password: String
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            LabelTextField(inputText: $fullName, labelText: "Full name")
+            LabelTextField(inputText: $email, labelText: "Email")
+            LabelTextField(inputText: $password, labelText: "Password", isSecureField: true)
+        }
+    }
+}
+
+struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        SignupView()
     }
 }
